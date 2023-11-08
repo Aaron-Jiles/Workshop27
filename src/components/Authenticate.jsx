@@ -4,8 +4,7 @@ export default function Authenticate({ token }) {
   const [successMessage, setSuccessMessage] = useState(null);
   const [error, setError] = useState(null);
 
-  async function handleClick()
-   {
+  async function handleClick() {
     try {
       let response = await fetch ("https://fsa-jwt-practice.herokuapp.com/authenticate", {
         method: 'get',
@@ -18,6 +17,7 @@ export default function Authenticate({ token }) {
       setSuccessMessage(result.message)
     } catch (error) {
       setError(error.message);
+      console.log(error)
     }
   }
 
